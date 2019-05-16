@@ -1,4 +1,4 @@
-package q1;
+package q1.datagram;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -16,12 +16,12 @@ public class Sender {
             // Bind to any available port
             DatagramSocket mySocket = new DatagramSocket();
 
-            // Sending the message to q1.Receiver
+            // Sending the message to q1.datagram.Receiver
             byte[] buffer = "Hello From Client".getBytes( );
             DatagramPacket datagram = new DatagramPacket(buffer, buffer.length, receiverHost, receiverPort);
             mySocket.send(datagram);
 
-            // Receiving Response from the q1.Receiver
+            // Receiving Response from the q1.datagram.Receiver
             byte[] responseBuffer = new byte[MAX_LEN];
             DatagramPacket receiverResponse = new DatagramPacket(responseBuffer, MAX_LEN);
             mySocket.receive(receiverResponse);

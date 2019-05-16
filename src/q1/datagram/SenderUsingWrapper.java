@@ -1,4 +1,4 @@
-package q1;
+package q1.datagram;
 
 import java.net.InetAddress;
 
